@@ -1,0 +1,21 @@
+name: Lights camera haction
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  haction:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: npm ci
+      - name: Do stuff
+        run: npm start
+        env:
+          STACKOVERFLOW_EMAIL: ${{ secrets.GITHUB_HACTION_ENABLED }}
