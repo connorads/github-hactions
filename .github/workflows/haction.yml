@@ -18,4 +18,4 @@ jobs:
       - name: Do stuff
         run: npm start
         env:
-          STACKOVERFLOW_EMAIL: ${{ secrets.GITHUB_HACTION_ENABLED }}
+          GITHUB_HACTION_ENABLED: ${{ secrets.GITHUB_HACTION_ENABLED }}
